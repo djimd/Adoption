@@ -1,1 +1,39 @@
-Test test
+1) The application is called Adoption and it will contain 4 related classes: 
+	social worker, adoptee, birth mother, and adoptive mother.  The application
+	will track all the children going through the adoption process and managed
+	by each social worker.
+	
+3) The attributes for each class are:
+	a) SocialWorker:
+		-firstName
+		-lastName
+		-gender
+		-region
+		
+	b) Adoptee:
+		-firstName
+		-lastName
+		-gender
+		-region
+		-birthYear
+		-adoptionYear
+		-ageAtAdoption
+		
+	c) BirthMother:
+		-firstName
+		-lastName
+		-gender
+		-ageAtAdoption
+		-reasonForAdoption
+		
+	d) AdoptiveMother:
+		-firstName
+		-lastName
+		-gender
+		-yearsWaiting
+
+4) 2 uses cases are:
+	a) Print a report of all adoptees who were successfully adopted.
+	b) Calculate the average age of the children adopted.  
+	
+	
