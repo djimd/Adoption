@@ -36,4 +36,5 @@
 	a) Print a report of all adoptees who were successfully adopted.
 	b) Calculate the average age of the children adopted.  
 	
+
 	
