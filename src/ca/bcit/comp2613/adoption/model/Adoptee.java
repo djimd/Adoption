@@ -81,4 +81,5 @@ public class Adoptee {
 				+ ", birthYear=" + birthYear + ", adoptionYear=" + adoptionYear
 				+ ", ageAtAdoption=" + ageAtAdoption + "]";
 	}
+	
 }

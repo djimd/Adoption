@@ -53,4 +53,5 @@ public class AdoptiveMother {
 				+ ", lastName=" + lastName + ", gender=" + gender
 				+ ", yearsWaiting=" + yearsWaiting + "]";
 	}
+	
 }
