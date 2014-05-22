@@ -8,6 +8,17 @@ public class BirthMother {
 	private Integer ageAtAdoption;
 	private Integer reasonForAdoption;
 	
+	public BirthMother(Long id, String firstName, String lastName,
+			String gender, Integer ageAtAdoption, Integer reasonForAdoption) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.ageAtAdoption = ageAtAdoption;
+		this.reasonForAdoption = reasonForAdoption;
+	}
+
 	public Long getId() {
 		return id;
 	}

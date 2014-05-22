@@ -6,7 +6,17 @@ public class AdoptiveMother {
 	private String lastName;
 	private String gender;
 	private Integer yearsWaiting;
-	
+
+	public AdoptiveMother(Long id, String firstName, String lastName,
+			String gender, Integer yearsWaiting) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.yearsWaiting = yearsWaiting;
+	}
+
 	public Long getId() {
 		return id;
 	}

@@ -10,6 +10,22 @@ public class Adoptee {
 	private Integer adoptionYear;
 	private Integer ageAtAdoption;
 	
+	
+	
+	public Adoptee(Long id, String firstName, String lastName, String gender,
+			String region, Integer birthYear, Integer adoptionYear,
+			Integer ageAtAdoption) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.region = region;
+		this.birthYear = birthYear;
+		this.adoptionYear = adoptionYear;
+		this.ageAtAdoption = ageAtAdoption;
+	}
+
 	public Long getId() {
 		return id;
 	}

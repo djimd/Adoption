@@ -7,6 +7,16 @@ public class SocialWorker {
 	private String gender;
 	private String region;
 	
+	public SocialWorker(Long id, String firstName, String lastName,
+			String gender, String region) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.region = region;
+	}
+
 	public Long getId() {
 		return id;
 	}
