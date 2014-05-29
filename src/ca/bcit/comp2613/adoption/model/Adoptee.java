@@ -4,7 +4,7 @@ public class Adoptee {
 	private String id;
 	private String firstName;
 	private String lastName;
-	private String gender;
+	private Gender gender;
 	private String region;
 	private Integer birthYear;
 	private Integer adoptionYear;
@@ -14,7 +14,7 @@ public class Adoptee {
 		
 	}
 	
-	public Adoptee(String id, String firstName, String lastName, String gender,
+	public Adoptee(String id, String firstName, String lastName, Gender gender,
 			String region, Integer birthYear, Integer adoptionYear,
 			Integer ageAtAdoption) {
 		super();
@@ -52,11 +52,11 @@ public class Adoptee {
 		this.lastName = lastName;
 	}
 	
-	public String getGender() {
+	public Gender getGender() {
 		return gender;
 	}
 	
-	public void setGender(String gender) {
+	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
 	
@@ -101,4 +101,3 @@ public class Adoptee {
 	}
 	
 }
-

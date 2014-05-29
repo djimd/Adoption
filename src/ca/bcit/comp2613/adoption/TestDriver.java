@@ -3,7 +3,7 @@ package ca.bcit.comp2613.adoption;
 import java.util.ArrayList;
 
 import ca.bcit.comp2613.adoption.model.*;
-import ca.bcit.comp2613.a00115507.util.*;
+import ca.bcit.comp2613.adoption.util.*;
 
 public class TestDriver {
 
