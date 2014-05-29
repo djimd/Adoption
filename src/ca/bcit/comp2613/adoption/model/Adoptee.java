@@ -1,7 +1,7 @@
 package ca.bcit.comp2613.adoption.model;
 
 public class Adoptee {
-	private Long id;
+	private String id;
 	private String firstName;
 	private String lastName;
 	private String gender;
@@ -10,9 +10,11 @@ public class Adoptee {
 	private Integer adoptionYear;
 	private Integer ageAtAdoption;
 	
+	public Adoptee(){
+		
+	}
 	
-	
-	public Adoptee(Long id, String firstName, String lastName, String gender,
+	public Adoptee(String id, String firstName, String lastName, String gender,
 			String region, Integer birthYear, Integer adoptionYear,
 			Integer ageAtAdoption) {
 		super();
@@ -26,11 +28,11 @@ public class Adoptee {
 		this.ageAtAdoption = ageAtAdoption;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 	
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	
@@ -99,3 +101,4 @@ public class Adoptee {
 	}
 	
 }
+
