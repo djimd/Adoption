@@ -5,17 +5,19 @@ public class Adoptee {
 	private String firstName;
 	private String lastName;
 	private Gender gender;
-	private String region;
+	private Region region;
 	private Integer birthYear;
 	private Integer adoptionYear;
 	private Integer ageAtAdoption;
+	
+	private SocialWorker socialWorker;
 	
 	public Adoptee(){
 		
 	}
 	
 	public Adoptee(String id, String firstName, String lastName, Gender gender,
-			String region, Integer birthYear, Integer adoptionYear,
+			Region region, Integer birthYear, Integer adoptionYear,
 			Integer ageAtAdoption) {
 		super();
 		this.id = id;
@@ -60,11 +62,11 @@ public class Adoptee {
 		this.gender = gender;
 	}
 	
-	public String getRegion() {
+	public Region getRegion() {
 		return region;
 	}
 	
-	public void setRegion(String region) {
+	public void setRegion(Region region) {
 		this.region = region;
 	}
 	
@@ -91,13 +93,17 @@ public class Adoptee {
 	public void setAgeAtAdoption(Integer ageAtAdoption) {
 		this.ageAtAdoption = ageAtAdoption;
 	}
+	
+	public void setSocialWorker(SocialWorker socialWorker) {
+		this.socialWorker = socialWorker;
+	}
 
 	@Override
 	public String toString() {
 		return "Adoptee [id=" + id + ", firstName=" + firstName + ", lastName="
 				+ lastName + ", gender=" + gender + ", region=" + region
 				+ ", birthYear=" + birthYear + ", adoptionYear=" + adoptionYear
-				+ ", ageAtAdoption=" + ageAtAdoption + "]";
+				+ ", ageAtAdoption=" + ageAtAdoption + ", socialWorker=" + socialWorker + "]";
 	}
 	
 }

@@ -1,8 +1,14 @@
 package ca.bcit.comp2613.adoption.util;
 
 import java.util.ArrayList;
-//import ca.bcit.comp2613.a00115507.model.Adoptee;
+
 import ca.bcit.comp2613.adoption.model.Adoptee;
+import ca.bcit.comp2613.adoption.model.Gender;
+import ca.bcit.comp2613.adoption.model.Region;
+import ca.bcit.comp2613.adoption.model.TestException;
+
+import java.util.Random;
+
 
 public class CreateHelper {
 
@@ -21,13 +27,17 @@ public class CreateHelper {
 
 	public static ArrayList<Adoptee> createAdoptees() {
 		ArrayList<Adoptee> retval = new ArrayList<>();
-		String[] strs = LOREM_IPSUM.split("\\s");
+		String[] strs = LOREM_IPSUM.split("\\s");		
+		Random random = new Random();
+
 		// create loop
 		for (int i = 0; i < 102; i++) {
 			Adoptee adoptee = new Adoptee();
 			adoptee.setId(Integer.toString(i));
 			adoptee.setFirstName(strs[i].toUpperCase());
 			adoptee.setLastName(new StringBuilder(strs[i]).reverse().toString());
+			adoptee.setGender(Gender.values()[random.nextInt(Gender.values().length)]);
+			adoptee.setRegion(Region.values()[random.nextInt(Region.values().length)]);
 			retval.add(adoptee);
 		}
 		return retval;
@@ -40,7 +50,7 @@ public class CreateHelper {
 	}
 
 	public static ArrayList<Adoptee> searchAdopteesByFirstName(ArrayList<Adoptee> adoptees, 
-			String firstName) {
+			String firstName) throws TestException {
 		ArrayList<Adoptee> retval = new ArrayList<>();
 		for (Adoptee adoptee : adoptees) {
 			if (adoptee.getFirstName().equals(firstName)) {
@@ -51,7 +61,7 @@ public class CreateHelper {
 	}
 
 	public static ArrayList<Adoptee> searchAdopteesByFirstNameRegex(
-			ArrayList<Adoptee> adoptees, String regex) {
+			ArrayList<Adoptee> adoptees, String regex) throws TestException {
 		ArrayList<Adoptee> retval = new ArrayList<>();
 		for (Adoptee adoptee : adoptees) {
 			 if (adoptee.getFirstName().matches(regex)) {

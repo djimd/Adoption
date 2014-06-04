@@ -4,11 +4,16 @@ public class SocialWorker {
 	private Long id;
 	private String firstName;
 	private String lastName;
-	private String gender;
-	private String region;
+	private Gender gender;
+	private Region region;
+	private Adoptee adoptee;
+	
+	public SocialWorker(){
+		
+	}
 	
 	public SocialWorker(Long id, String firstName, String lastName,
-			String gender, String region) {
+			Gender gender, Region region) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -41,27 +46,31 @@ public class SocialWorker {
 		this.lastName = lastName;
 	}
 	
-	public String getGender() {
+	public Gender getGender() {
 		return gender;
 	}
 	
-	public void setGender(String gender) {
+	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
 	
-	public String getRegion() {
+	public Region getRegion() {
 		return region;
 	}
 	
-	public void setRegion(String region) {
+	public void setRegion(Region region) {
 		this.region = region;
+	}
+	
+	public void setAdoptee(Adoptee adoptee) {
+		this.adoptee = adoptee;
 	}
 
 	@Override
 	public String toString() {
 		return "SocialWorker [id=" + id + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", gender=" + gender + ", region="
-				+ region + "]";
+				+ region + ", adoptee=" + adoptee + "]";
 	}
 	
 	

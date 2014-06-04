@@ -4,12 +4,12 @@ public class BirthMother {
 	private Long id;
 	private String firstName;
 	private String lastName;
-	private String gender;
+	private Gender gender;
 	private Integer ageAtAdoption;
 	private Integer reasonForAdoption;
 	
 	public BirthMother(Long id, String firstName, String lastName,
-			String gender, Integer ageAtAdoption, Integer reasonForAdoption) {
+			Gender gender, Integer ageAtAdoption, Integer reasonForAdoption) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -43,11 +43,11 @@ public class BirthMother {
 		this.lastName = lastName;
 	}
 	
-	public String getGender() {
+	public Gender getGender() {
 		return gender;
 	}
 	
-	public void setGender(String gender) {
+	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
 	
