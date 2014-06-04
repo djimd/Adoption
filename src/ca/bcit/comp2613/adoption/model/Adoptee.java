@@ -14,6 +14,7 @@ public class Adoptee {
 	
 	public Adoptee(){
 		
+		
 	}
 	
 	public Adoptee(String id, String firstName, String lastName, Gender gender,
