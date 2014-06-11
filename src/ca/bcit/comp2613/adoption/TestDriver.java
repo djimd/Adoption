@@ -18,31 +18,30 @@ public class TestDriver {
 		adoptee.setSocialWorker(socialWorker);
 		socialWorker.setAdoptee(adoptee); 
 		
-		ArrayList<Adoptee> adoptees = CreateHelper.createAdoptees();
-		CreateHelper.printAdoptees(adoptees);	
+		ArrayList<Adoptee> adoptees = SearchAndCreateHelper.createAdoptees();
+		SearchAndCreateHelper.printAdoptees(adoptees);	
 
 		System.out.println("---------------");
-		//ArrayList<Adoptee> adopteesByFirstName = CreateHelper.searchAdopteesByFirstName(adoptees, "PUBLISHING");
-		ArrayList<Adoptee> adopteesByFirstName = CreateHelper.searchAdopteesByFirstName(adoptees, "PATRICIA");
-		CreateHelper.printAdoptees(adopteesByFirstName);
+		//ArrayList<Adoptee> adopteesByFirstName = SearchAndCreateHelper.searchAdopteesByFirstName(adoptees, "PUBLISHING");
+		ArrayList<Adoptee> adopteesByFirstName = SearchAndCreateHelper.searchAdopteesByFirstName(adoptees, "PATRICIA");
+		SearchAndCreateHelper.printAdoptees(adopteesByFirstName);
 		
 		System.out.println("---------------");
-		//ArrayList<Adoptee> adopteesByFirstNameRegex = CreateHelper.searchAdopteesByFirstNameRegex(adoptees, "WO.*");
-		ArrayList<Adoptee> adopteesByFirstNameRegex = CreateHelper.searchAdopteesByFirstNameRegex(adoptees, "KAT.*");
-		CreateHelper.printAdoptees(adopteesByFirstNameRegex);					
+		//ArrayList<Adoptee> adopteesByFirstNameRegex = SearchAndCreateHelper.searchAdopteesByFirstNameRegex(adoptees, "WO.*");
+		ArrayList<Adoptee> adopteesByFirstNameRegex = SearchAndCreateHelper.searchAdopteesByFirstNameRegex(adoptees, "KAT.*");
+		SearchAndCreateHelper.printAdoptees(adopteesByFirstNameRegex);					
 */		
 	
 
 		Adoptee adoptee = new Adoptee(){
 			//@Override
-			public void adoptee() throws TestException{
+			public void generateAdoptee() throws TestException{
 				Random rand = new Random();
 				int randInt = rand.nextInt();
 				
-				if (randInt % 20 == 0) { 				// modulus - means 5% of the time		
-					
-					ArrayList<Adoptee> adoptees = CreateHelper.createAdoptees();
-					CreateHelper.printAdoptees(adoptees);	
+				if (randInt % 20 == 0) { 				// modulus - means 5% of the time							
+					ArrayList<Adoptee> adoptees = SearchAndCreateHelper.createAdoptees();
+					SearchAndCreateHelper.printAdoptees(adoptees);	
 					throw new AdopteeException(randInt);		
 				}
 			}
@@ -53,8 +52,10 @@ public class TestDriver {
 			//Adoptee adoptee = new Adoptee();
 			SocialWorker socialWorker = new SocialWorker(); 
 			
-			ArrayList<Adoptee> adoptees = CreateHelper.createAdoptees();
-			CreateHelper.printAdoptees(adoptees);	
+			ArrayList<Adoptee> adoptees = SearchAndCreateHelper.createAdoptees();
+			SearchAndCreateHelper.printAdoptees(adoptees);	
+			
+			SearchAndCreateHelper.showComparableExample(SearchAndCreateHelper.createAdoptees());
 			
 			//Create relationship between adoptee and socialWorker.
 			adoptee.setSocialWorker(socialWorker);
@@ -63,13 +64,13 @@ public class TestDriver {
 			
 			System.out.println("---------------");
 			//ArrayList<Adoptee> adopteesByFirstName = CreateHelper.searchAdopteesByFirstName(adoptees, "PUBLISHING");
-			ArrayList<Adoptee> adopteesByFirstName = CreateHelper.searchAdopteesByFirstName(adoptees, "PATRICIA");
-			CreateHelper.printAdoptees(adopteesByFirstName);
+			ArrayList<Adoptee> adopteesByFirstName = SearchAndCreateHelper.searchAdopteesByFirstName(adoptees, "PATRICIA");
+			SearchAndCreateHelper.printAdoptees(adopteesByFirstName);
 			
 			System.out.println("---------------");
 			//ArrayList<Adoptee> adopteesByFirstNameRegex = CreateHelper.searchAdopteesByFirstNameRegex(adoptees, "WO.*");
-			ArrayList<Adoptee> adopteesByFirstNameRegex = CreateHelper.searchAdopteesByFirstNameRegex(adoptees, "KAT.*");
-			CreateHelper.printAdoptees(adopteesByFirstNameRegex);	
+			ArrayList<Adoptee> adopteesByFirstNameRegex = SearchAndCreateHelper.searchAdopteesByFirstNameRegex(adoptees, "KAT.*");
+			SearchAndCreateHelper.printAdoptees(adopteesByFirstNameRegex);	
 			
 		} catch (TestException e){
 			e.printStackTrace(); // welcome to printing the stacktrace

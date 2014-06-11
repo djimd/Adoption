@@ -6,11 +6,14 @@ import ca.bcit.comp2613.adoption.model.Adoptee;
 import ca.bcit.comp2613.adoption.model.Gender;
 import ca.bcit.comp2613.adoption.model.Region;
 import ca.bcit.comp2613.adoption.model.TestException;
+import ca.bcit.comp2613.adoption.util.SortRecords;
 
 import java.util.Random;
 
+import java.util.Collections;
 
-public class CreateHelper {
+
+public class SearchAndCreateHelper {
 
 	public static String LOREM_IPSUM = 	"MARY	PATRICIA	LINDA	BARBARA	ELIZABETH	JENNIFER	MARIA	SUSAN	MARGARET	DOROTHY	LISA	NANCY	KAREN"
 			+ "BETTY	HELEN	SANDRA	DONNA CAROL	RUTH	SHARON	MICHELLE	LAURA	SARAH	KIMBERLY	DEBORAH	JESSICA"
@@ -38,6 +41,7 @@ public class CreateHelper {
 			adoptee.setLastName(new StringBuilder(strs[i]).reverse().toString());
 			adoptee.setGender(Gender.values()[random.nextInt(Gender.values().length)]);
 			adoptee.setRegion(Region.values()[random.nextInt(Region.values().length)]);
+			
 			retval.add(adoptee);
 		}
 		return retval;
@@ -45,6 +49,14 @@ public class CreateHelper {
 
 	public static void printAdoptees(ArrayList<Adoptee> adoptees) {
 		for (Adoptee adoptee : adoptees) {
+			System.out.println(adoptee);
+		}
+	}
+	
+	public static void showComparableExample(ArrayList<Adoptee> adoptees){
+		ArrayList<SortRecords> myList = new ArrayList<>();
+		Collections.sort(myList);
+		for (SortRecords adoptee : myList){
 			System.out.println(adoptee);
 		}
 	}
