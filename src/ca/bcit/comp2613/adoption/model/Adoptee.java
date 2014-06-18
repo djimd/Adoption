@@ -39,7 +39,7 @@ public class Adoptee {
 		this.id = id;
 	}
 	
-	public String getFirstName() {
+	public String getFirstName(){
 		return firstName;
 	}
 	

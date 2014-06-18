@@ -1,11 +1,9 @@
-package ca.bcit.comp2613.adoption.util;
+package ca.bcit.comp2613.adoption.model;
 
-
-public class AdopteeWithComparable implements Comparable<AdopteeWithComparable>{
-
+public class SortRecord implements Comparable<SortRecord> {
 	private String firstName;
 	private String lastName;
-	public AdopteeWithComparable(String firstName, String lastName) {
+	public SortRecord(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
@@ -27,7 +25,7 @@ public class AdopteeWithComparable implements Comparable<AdopteeWithComparable>{
 		
 		return lastName + ", " + firstName;
 	}
-	public int compareTo(AdopteeWithComparable o) {
+	public int compareTo(SortRecord o) {
 		int retval = this.getLastName().compareTo(o.getLastName());
 		if (retval == 0) {
 			retval = this.getFirstName().compareTo(o.getFirstName());
