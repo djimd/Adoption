@@ -98,6 +98,7 @@ public class SearchAndCreateHelper {
         }
     }
     
+  
     
     public static ArrayList<Adoptee> searchAdopteesByFirstName(ArrayList<Adoptee> adoptees, 
             String firstName) throws AdopteeFirstNameException {
@@ -129,5 +130,5 @@ public class SearchAndCreateHelper {
         }
         return retval;
     }
-    
+   
 }
