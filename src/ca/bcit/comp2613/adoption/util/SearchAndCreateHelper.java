@@ -1,5 +1,10 @@
 package ca.bcit.comp2613.adoption.util;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+
 import java.util.ArrayList;
 
 import ca.bcit.comp2613.adoption.model.Adoptee;
@@ -8,9 +13,12 @@ import ca.bcit.comp2613.adoption.model.Region;
 import ca.bcit.comp2613.adoption.model.SortRecord;
 import ca.bcit.comp2613.adoption.model.AdopteeFirstNameException;
 
+import java.util.Collection;
 import java.util.Random;
 import java.util.Collections;
 
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
@@ -18,15 +26,22 @@ import org.apache.log4j.PropertyConfigurator;
 public class SearchAndCreateHelper {
 
     public static Logger log = Logger.getLogger(SearchAndCreateHelper.class);
+    public static PropertiesConfiguration propertiesConfiguration = new PropertiesConfiguration();
+
     
     static{
             PropertyConfigurator.configure(
                     SearchAndCreateHelper.class.getResourceAsStream("log4j.properties"));
+            try {
+                propertiesConfiguration.load(SearchAndCreateHelper.class.getResourceAsStream("adoption.properties"));
+            } catch (ConfigurationException e) {                
+                e.printStackTrace();
+            }
     };
     
-    public static String LOREM_IPSUM =  "MARY   PATRICIA    LINDA   BARBARA ELIZABETH   JENNIFER    MARIA   SUSAN   MARGARET    DOROTHY LISA    NANCY   KAREN"
-            + "BETTY    HELEN   SANDRA  DONNA CAROL RUTH    SHARON  MICHELLE    LAURA   SARAH   KIMBERLY    DEBORAH JESSICA"
-            + "SHIRLEY  CYNTHIA ANGELA  MELISSA BRENDA  AMY ANNA    REBECCA VIRGINIA    KATHLEEN    PAMELA  MARTHA  DEBRA"
+    public static String LOREM_IPSUM =  "MARY PATRICIA LINDA BARBARA ELIZABETH JENNIFER MARIA SUSAN MARGARET DOROTHY LISA NANCY KAREN"
+            + "BETTY HELEN SANDRA DONNA CAROL RUTH SHARON MICHELLE LAURA SARAH KIMBERLY DEBORAH JESSICA"
+            + "SHIRLEY CYNTHIA ANGELA MELISSA BRENDA AMY ANNA REBECCA VIRGINIA KATHLEEN PAMELA MARTHA DEBRA"
             + "AMANDA   STEPHANIE   CAROLYN CHRISTINE   MARIE   JANET   CATHERINE   FRANCES ANN JOYCE   DIANE   ALICE   JULIE"
             + "HEATHER  TERESA  DORIS   GLORIA  EVELYN  JEAN    CHERYL  MILDRED KATHERINE   JOAN    ASHLEY  JUDITH  ROSE"
             + "JANICE   KELLY   NICOLE  JUDY    CHRISTINA   KATHY   THERESA BEVERLY DENISE  TAMMY   IRENE   JANE    LORI    RACHEL"
@@ -57,9 +72,21 @@ public class SearchAndCreateHelper {
         return retval;
     }
 
-    public static void printAdoptees(ArrayList<Adoptee> adoptees) {
+    public static void printAdoptees(ArrayList<Adoptee> adoptees) throws IOException {
+        log.info(propertiesConfiguration.getString("beginReport"));
+        
+        File file = new File("report.txt");
+        
         for (Adoptee adoptee : adoptees) {
             log.info(adoptee);
+            
+            FileUtils.writeLines(file, adoptees);
+
+        }
+        
+        if (propertiesConfiguration.getBoolean("saveReportToFile")) {
+            // TODO save report to a file
+            log.warn("TODO - save adoptees to a file");
         }
     }
     
