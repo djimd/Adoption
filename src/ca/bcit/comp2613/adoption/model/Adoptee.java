@@ -6,9 +6,9 @@ public class Adoptee {
 	private String lastName;
 	private Gender gender;
 	private Region region;
-	private Integer birthYear;
-	private Integer adoptionYear;
-	private Integer ageAtAdoption;
+	private String birthYear;
+	private String adoptionYear;
+	private String ageAtAdoption;
 	
 	private SocialWorker socialWorker;
 	
@@ -18,8 +18,8 @@ public class Adoptee {
 	}
 	
 	public Adoptee(String id, String firstName, String lastName, Gender gender,
-			Region region, Integer birthYear, Integer adoptionYear,
-			Integer ageAtAdoption) {
+			Region region, String birthYear, String adoptionYear, String ageAtAdoption,
+			SocialWorker socialWorker) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -71,30 +71,33 @@ public class Adoptee {
 		this.region = region;
 	}
 	
-	public Integer getBirthYear() {
+	public String getBirthYear() {
 		return birthYear;
 	}
 	
-	public void setBirthYear(Integer birthYear) {
+	public void setBirthYear(String birthYear) {
 		this.birthYear = birthYear;
 	}
 	
-	public Integer getAdoptionYear() {
+	public String getAdoptionYear() {
 		return adoptionYear;
 	}
 	
-	public void setAdoptionYear(Integer adoptionYear) {
+	public void setAdoptionYear(String adoptionYear) {
 		this.adoptionYear = adoptionYear;
 	}
 	
-	public Integer getAgeAtAdoption() {
+	public String getAgeAtAdoption() {
 		return ageAtAdoption;
 	}
 	
-	public void setAgeAtAdoption(Integer ageAtAdoption) {
+	public void setAgeAtAdoption(String ageAtAdoption) {
 		this.ageAtAdoption = ageAtAdoption;
 	}
-	
+
+    public SocialWorker getSocialWorker() {
+        return socialWorker;
+    }	
 	public void setSocialWorker(SocialWorker socialWorker) {
 		this.socialWorker = socialWorker;
 	}
