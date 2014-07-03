@@ -1,27 +1,24 @@
 package ca.bcit.comp2613.adoption.model;
 
 public class AdoptiveMother {
-	private Long id;
+	private String id;
 	private String firstName;
 	private String lastName;
-	private Gender gender;
-	private Integer yearsWaiting;
+	private String yearsWaiting;
 
-	public AdoptiveMother(Long id, String firstName, String lastName,
-			Gender gender, Integer yearsWaiting) {
+	public AdoptiveMother(String id, String firstName, String lastName, String yearsWaiting) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.gender = gender;
 		this.yearsWaiting = yearsWaiting;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 	
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	
@@ -41,27 +38,18 @@ public class AdoptiveMother {
 		this.lastName = lastName;
 	}
 	
-	public Gender getGender() {
-		return gender;
-	}
-	
-	public void setGender(Gender gender) {
-		this.gender = gender;
-	}
-	
-	public Integer getYearsWaiting() {
+	public String getYearsWaiting() {
 		return yearsWaiting;
 	}
 	
-	public void setYearsWaiting(Integer yearsWaiting) {
+	public void setYearsWaiting(String yearsWaiting) {
 		this.yearsWaiting = yearsWaiting;
 	}
 
 	@Override
 	public String toString() {
 		return "AdoptiveMother [id=" + id + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", gender=" + gender
-				+ ", yearsWaiting=" + yearsWaiting + "]";
+				+ ", lastName=" + lastName + ", yearsWaiting=" + yearsWaiting + "]";
 	}
 	
 }

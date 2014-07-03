@@ -1,4 +1,5 @@
 package ca.bcit.comp2613.adoption.model;
+import ca.bcit.comp2613.adoption.model.SocialWorker;
 
 public class Adoptee {
 	private String id;
@@ -9,8 +10,9 @@ public class Adoptee {
 	private String birthYear;
 	private String adoptionYear;
 	private String ageAtAdoption;
-	
-	private SocialWorker socialWorker;
+	//private SocialWorker socialWorker;
+	private String SWfName;
+	private SocialWorker socialWorker = new SocialWorker();
 	
 	public Adoptee(){
 		
@@ -94,8 +96,9 @@ public class Adoptee {
 	public void setAgeAtAdoption(String ageAtAdoption) {
 		this.ageAtAdoption = ageAtAdoption;
 	}
-
+	
     public SocialWorker getSocialWorker() {
+        socialWorker = SocialWorker.get(firstName);
         return socialWorker;
     }	
 	public void setSocialWorker(SocialWorker socialWorker) {
@@ -109,5 +112,7 @@ public class Adoptee {
 				+ ", birthYear=" + birthYear + ", adoptionYear=" + adoptionYear
 				+ ", ageAtAdoption=" + ageAtAdoption + ", socialWorker=" + socialWorker + "]";
 	}
+
+
 	
 }

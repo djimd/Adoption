@@ -10,9 +10,11 @@ import java.util.ArrayList;
 import ca.bcit.comp2613.adoption.model.Adoptee;
 import ca.bcit.comp2613.adoption.model.Gender;
 import ca.bcit.comp2613.adoption.model.Region;
+//import ca.bcit.comp2613.adoption.model.SocialWorker;
 import ca.bcit.comp2613.adoption.model.SortRecord;
 import ca.bcit.comp2613.adoption.model.AdopteeFirstNameException;
 
+import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -58,14 +60,25 @@ public class SearchAndCreateHelper {
 		Random random = new Random();
 
 		// create loop
-		for (int i = 0; i < 102; i++) {
+		for (int i = 0; i < 102; i++) {   
+		    int adopteeBirthYear;
+		    int adopteeAdoptionYear;
 			Adoptee adoptee = new Adoptee();
-			adoptee.setId(Integer.toString(i));
+			adoptee.setId(Integer.toString(i+1));
 			adoptee.setFirstName(strs[i].toUpperCase());
 			adoptee.setLastName(new StringBuilder(strs[i]).reverse().toString());
 			adoptee.setGender(Gender.values()[random.nextInt(Gender.values().length)]);
 			adoptee.setRegion(Region.values()[random.nextInt(Region.values().length)]);
-           
+			
+			adopteeBirthYear = (2000+(int)(Math.random()*15));
+			adoptee.setBirthYear(Integer.toString(adopteeBirthYear));
+			
+			adopteeAdoptionYear = adopteeBirthYear+(int)(Math.random()*((Calendar.getInstance().get(Calendar.YEAR))-adopteeBirthYear));
+            adoptee.setAdoptionYear(Integer.toString(adopteeAdoptionYear));
+            
+            adoptee.setAgeAtAdoption(Integer.toString(adopteeAdoptionYear-adopteeBirthYear));
+            
+         //   adoptee.setSocialWorker(SocialWorker());
 			retval.add(adoptee);
 		}
 		return retval;

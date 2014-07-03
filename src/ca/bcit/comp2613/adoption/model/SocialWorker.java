@@ -1,10 +1,9 @@
 package ca.bcit.comp2613.adoption.model;
 
 public class SocialWorker {
-	private Long id;
+	private String id;
 	private String firstName;
 	private String lastName;
-	private Gender gender;
 	private Region region;
 	private Adoptee adoptee;
 	
@@ -12,21 +11,19 @@ public class SocialWorker {
 		
 	}
 	
-	public SocialWorker(Long id, String firstName, String lastName,
-			Gender gender, Region region) {
+	public SocialWorker(String id, String firstName, String lastName, Region region) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.gender = gender;
 		this.region = region;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 	
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	
@@ -46,14 +43,6 @@ public class SocialWorker {
 		this.lastName = lastName;
 	}
 	
-	public Gender getGender() {
-		return gender;
-	}
-	
-	public void setGender(Gender gender) {
-		this.gender = gender;
-	}
-	
 	public Region getRegion() {
 		return region;
 	}
@@ -69,9 +58,14 @@ public class SocialWorker {
 	@Override
 	public String toString() {
 		return "SocialWorker [id=" + id + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", gender=" + gender + ", region="
+				+ ", lastName=" + lastName + ", region="
 				+ region + ", adoptee=" + adoptee + "]";
 	}
+
+    public static SocialWorker get(String firstName2) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 	
 	
 }
