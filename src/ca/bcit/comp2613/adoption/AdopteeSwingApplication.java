@@ -6,7 +6,9 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.UUID;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
@@ -35,7 +37,10 @@ public class AdopteeSwingApplication {
     private JLabel lblId;
     
     private SwingAdopteeModel swingAdopteeModel;
- 
+    JComboBox<Gender> genderComboBox = new JComboBox<>();
+    JComboBox<Region> regionComboBox = new JComboBox<>();
+    JComboBox<SocialWorker> socialWorkerComboBox = new JComboBox<>();
+    
     public String[] columnNames = new String[] { "id", "First Name",
             "Last Name", "Gender", "Region", "Birth Year", "Adoption Year", 
             "Age At Adoption", "Social Worker" };
@@ -91,16 +96,27 @@ public class AdopteeSwingApplication {
                     .getValueAt(table.getSelectedRow(), 1).toString());
             lastNameTextField.setText(table.getModel()
                     .getValueAt(table.getSelectedRow(), 2).toString());
-            genderTextField.setText(table.getModel()
-                    .getValueAt(table.getSelectedRow(), 3).toString());
-            regionTextField.setText(table.getModel()
-                    .getValueAt(table.getSelectedRow(), 4).toString()); 
+       
+              genderComboBox.setModel(new DefaultComboBoxModel<>(Gender.values()));
+             //       .getSelectedItem(table.getSelectedRow(), 3).toString());
+            //genderComboBox.setModel(new DefaultComboBoxModel<>(Gender.values())
+                  //    .getValueAt(table.getSelectedRow(), 3).toString());         
+            
+            regionComboBox.setModel(new DefaultComboBoxModel<>(Region.values()));
+            
+     /*       genderTextField.setText(table.getModel()
+                    .getValueAt(table.getSelectedRow(), 3).toString()); 
+            regionTextField.setText(table.getModel()        
+                    .getValueAt(table.getSelectedRow(), 4).toString()); */
+            
             birthYearTextField.setText(table.getModel()
                     .getValueAt(table.getSelectedRow(), 5).toString());
             adoptionYearTextField.setText(table.getModel()
                     .getValueAt(table.getSelectedRow(), 6).toString());
             ageAtAdoptionTextField.setText(table.getModel()
                     .getValueAt(table.getSelectedRow(), 7).toString());
+            
+       //     socialWorkerComboBox.setModel(new DefaultComboBoxModel<>(SocialWorker.values()));
             socialWorkerTextField.setText(table.getModel()
                     .getValueAt(table.getSelectedRow(), 8).toString());
         } catch (Exception e) {}
@@ -110,14 +126,19 @@ public class AdopteeSwingApplication {
         String id = idTextField.getText();
         String firstName = firstNameTextField.getText();
         String lastName = lastNameTextField.getText();
-        String gender = genderTextField.getText();  
-        String region = regionTextField.getText();
+     //   String gender = genderTextField.getText();  
+        Gender gender = (Gender)genderComboBox.getSelectedItem();       
+      //  String region = regionTextField.getText();
+        Region region = (Region)regionComboBox.getSelectedItem();
+        
         String birthYear = birthYearTextField.getText();   
         String adoptionYear = adoptionYearTextField.getText();
         String ageAtAdoption = ageAtAdoptionTextField.getText();
-        Object socialWorker = socialWorkerTextField.getText();   
         
-        Adoptee adoptee = new Adoptee(id, firstName, lastName, null, null, birthYear, adoptionYear, ageAtAdoption, null);        
+        Object socialWorker = socialWorkerTextField.getText();   
+     //   SocialWorker socialWorker = (SocialWorker)socialWorkerComboBox.getSelectedItem();
+            
+        Adoptee adoptee = new Adoptee(id, firstName, lastName, gender, region, birthYear, adoptionYear, ageAtAdoption, null);        
 
         SearchAndCreateHelper.save(adoptees, adoptee);
 
