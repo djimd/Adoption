@@ -11,7 +11,7 @@ public class Adoptee {
 	private String adoptionYear;
 	private String ageAtAdoption;
 	//private SocialWorker socialWorker;
-	private String SWfName;
+	//private String SWfName;
 	private SocialWorker socialWorker = new SocialWorker();
 	
 	public Adoptee(){

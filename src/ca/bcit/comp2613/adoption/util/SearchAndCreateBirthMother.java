@@ -51,10 +51,12 @@ public class SearchAndCreateBirthMother {
 
         ArrayList<BirthMother> retval = new ArrayList<BirthMother>();
         String[] strs = LOREM_IPSUM.split("\\s");
+        @SuppressWarnings("unused")
         Random random = new Random();
 
         // create loop
         for (int i = 0; i < 102; i++) {   
+            @SuppressWarnings("unused")
             int BirthMotherYearsWaiting = 0;
             BirthMother BirthMother = new BirthMother(LOREM_IPSUM, LOREM_IPSUM, LOREM_IPSUM);
             BirthMother.setId(Integer.toString(i+1));

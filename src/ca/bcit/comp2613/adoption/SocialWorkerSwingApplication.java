@@ -30,7 +30,7 @@ public class SocialWorkerSwingApplication {
   
     private JLabel lblId;
    
-    private SwingSocialWorkerModel swingSocialWorkerModel;
+    private SwingMainModel swingMainModel;
  
     public String[] columnNames = new String[] { "id", "First Name",
             "Last Name", "Region" };
@@ -62,7 +62,7 @@ public class SocialWorkerSwingApplication {
 
     private void initTable() {
 
-        //table = new JTable(swingSocialWorkerModel);
+        //table = new JTable(swingMainModel);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         table.getSelectionModel().addListSelectionListener(
                 new ListSelectionListener() {
@@ -96,6 +96,7 @@ public class SocialWorkerSwingApplication {
         String id = idTextField.getText();
         String firstName = firstNameTextField.getText();
         String lastName = lastNameTextField.getText();
+        @SuppressWarnings("unused")
         String region = regionTextField.getText();    
         SocialWorker SocialWorker = new SocialWorker(id, firstName, lastName, null);        
  
@@ -121,7 +122,7 @@ public class SocialWorkerSwingApplication {
     }
 
     private void refreshTable() {
-        //swingSocialWorkerModel = new SwingSocialWorkerModel();
+        //swingMainModel = new SwingMainModel();
         Object[][] data = null;
 
         data = new Object[SocialWorkers.size()][4];
@@ -133,7 +134,7 @@ public class SocialWorkerSwingApplication {
             data[i][3] = SocialWorker.getRegion();
             i++;
         }
-        swingSocialWorkerModel.setDataVector(data, columnNames);
+        swingMainModel.setDataVector(data, columnNames);
         table.repaint();
     }
 
@@ -147,9 +148,9 @@ public class SocialWorkerSwingApplication {
         frame.getContentPane().setLayout(null);
 
         // table = new JTable();
-        swingSocialWorkerModel = new SwingSocialWorkerModel();
+        swingMainModel = new SwingMainModel();
 
-        table = new JTable(swingSocialWorkerModel);
+        table = new JTable(swingMainModel);
 
         // table.setPreferredScrollableViewportSize(new Dimension(500, 70));
         // table.setBounds(0, 11, 585, 247);

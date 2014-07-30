@@ -14,7 +14,8 @@ public class TestDriver {
 
 		Adoptee adoptee = new Adoptee(){
 			//@Override
-			public void generateAdoptee() throws IOException /*throws AdopteeException */{
+			@SuppressWarnings("unused")
+            public void generateAdoptee() throws IOException /*throws AdopteeException */{
 				Random rand = new Random();
 				int randInt = rand.nextInt();
 				

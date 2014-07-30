@@ -53,6 +53,7 @@ public class SearchAndCreateAdoptiveMother {
 
         ArrayList<AdoptiveMother> retval = new ArrayList<AdoptiveMother>();
         String[] strs = LOREM_IPSUM.split("\\s");
+        @SuppressWarnings("unused")
         Random random = new Random();
 
         // create loop

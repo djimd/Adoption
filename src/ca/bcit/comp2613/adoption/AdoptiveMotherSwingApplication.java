@@ -30,7 +30,7 @@ public class AdoptiveMotherSwingApplication {
   
     private JLabel lblId;
    
-    private SwingAdoptiveMotherModel swingAdoptiveMotherModel;
+    private SwingMainModel swingMainModel;
  
     public String[] columnNames = new String[] { "id", "First Name",
             "Last Name", "Years Waiting" };
@@ -133,7 +133,7 @@ public class AdoptiveMotherSwingApplication {
             data[i][3] = AdoptiveMother.getYearsWaiting();
             i++;
         }
-        swingAdoptiveMotherModel.setDataVector(data, columnNames);
+        swingMainModel.setDataVector(data, columnNames);
         table.repaint();
     }
 
@@ -147,9 +147,9 @@ public class AdoptiveMotherSwingApplication {
         frame.getContentPane().setLayout(null);
 
         // table = new JTable();
-        swingAdoptiveMotherModel = new SwingAdoptiveMotherModel();
+        swingMainModel = new SwingMainModel();
 
-        table = new JTable(swingAdoptiveMotherModel);
+        table = new JTable(swingMainModel);
 
         // table.setPreferredScrollableViewportSize(new Dimension(500, 70));
         // table.setBounds(0, 11, 585, 247);

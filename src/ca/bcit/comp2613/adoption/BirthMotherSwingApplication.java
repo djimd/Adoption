@@ -29,7 +29,7 @@ public class BirthMotherSwingApplication {
   
     private JLabel lblId;
    
-    private SwingBirthMotherModel swingBirthMotherModel;
+    private SwingMainModel swingMainModel;
  
     public String[] columnNames = new String[] { "id", "First Name",
             "Last Name" };
@@ -127,7 +127,7 @@ public class BirthMotherSwingApplication {
             data[i][2] = BirthMother.getLastName();
             i++;
         }
-        swingBirthMotherModel.setDataVector(data, columnNames);
+        swingMainModel.setDataVector(data, columnNames);
         table.repaint();
     }
 
@@ -141,9 +141,9 @@ public class BirthMotherSwingApplication {
         frame.getContentPane().setLayout(null);
 
         // table = new JTable();
-        swingBirthMotherModel = new SwingBirthMotherModel();
+        swingMainModel = new SwingMainModel();
 
-        table = new JTable(swingBirthMotherModel);
+        table = new JTable(swingMainModel);
 
         // table.setPreferredScrollableViewportSize(new Dimension(500, 70));
         // table.setBounds(0, 11, 585, 247);
